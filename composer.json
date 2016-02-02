@@ -27,6 +27,8 @@
       "wpackagist-plugin/redirection": "2.4.3",
       "wpackagist-plugin/disable-comments": "1.4",
       "wpackagist-plugin/wordpress-seo": "3.0.7",
-      "wpackagist-plugin/user-role-editor": "4.22"
+      "wpackagist-plugin/user-role-editor": "4.22",
+      "wpackagist-plugin/tablepress": "1.7",
+      "wpackagist-plugin/easy-taxonomy-images": "1.0.1"
   }
 }

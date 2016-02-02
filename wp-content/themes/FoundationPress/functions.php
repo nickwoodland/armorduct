@@ -45,6 +45,19 @@ require_once( 'library/custom-nav.php' );
 /** Change WP's sticky post class */
 require_once( 'library/sticky-posts.php' );
 
+/** CMB2 Show On Filters */
+require_once( 'library/cmbs-show-on-filters.php' );
+
+/** Products CPT */
+require_once( 'library/cpt-products.php' );
+
+/** Products CMB */
+require_once( 'library/cmbs-products.php' );
+
+/** Products CMB */
+require_once( 'library/cmbs-fp.php' );
+
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
 
