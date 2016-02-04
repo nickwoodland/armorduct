@@ -36,4 +36,16 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 	add_action( 'wp_enqueue_scripts', 'foundationpress_scripts' );
 endif;
 
+if ( ! function_exists( 'owl_scripts' ) ) :
+	function owl_scripts() {
+
+	// Enqueue the main Stylesheet.
+	wp_enqueue_style( 'owl-stylesheet', get_stylesheet_directory_uri() . '/assets/components/owl.carousel/dist/assets/owl.carousel.min.css', array(), false, 'all' );
+	wp_enqueue_script( 'owl-script', get_template_directory_uri() . '/assets/components/owl.carousel/dist/owl.carousel.min.js', array('jquery'), false, true );
+
+	}
+
+	add_action( 'wp_enqueue_scripts', 'owl_scripts' );
+endif;
+
 ?>

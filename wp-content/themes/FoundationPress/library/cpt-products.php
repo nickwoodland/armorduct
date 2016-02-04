@@ -60,8 +60,10 @@ function ad_products_taxonomy() {
             'label' => 'Product Types',  //Display name
             'query_var' => true,
             'rewrite' => array(
-                'slug' => 'product-types', // This controls the base slug that will display before each term
-            //    'with_front' => true // Don't display the category base before
+                //'slug' => 'product-types', // This controls the base slug that will display before each term
+                //'with_front' => true // Don't display the category base before
+				'hierarchical' => true
+
             )
         )
     );

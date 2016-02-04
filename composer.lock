@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3635a46d5a46f5bc9f16172f1792bc2e",
-    "content-hash": "16b544aed153e33db27249b506d629b4",
+    "hash": "244d595f2e0c2cadf89ad587f5e32c69",
+    "content-hash": "87a2b7a46ef73c5003d7365159824d14",
     "packages": [
         {
             "name": "composer/installers",
@@ -146,6 +146,26 @@
             "homepage": "https://wordpress.org/plugins/cmb2/"
         },
         {
+            "name": "wpackagist-plugin/cmb2-taxonomy",
+            "version": "1.0.2",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/cmb2-taxonomy/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/cmb2-taxonomy.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/cmb2-taxonomy/"
+        },
+        {
             "name": "wpackagist-plugin/disable-comments",
             "version": "1.4",
             "source": {
@@ -184,26 +204,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/duplicate-post/"
-        },
-        {
-            "name": "wpackagist-plugin/easy-taxonomy-images",
-            "version": "1.0.1",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/easy-taxonomy-images/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/easy-taxonomy-images.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/easy-taxonomy-images/"
         },
         {
             "name": "wpackagist-plugin/options-framework",
@@ -287,15 +287,15 @@
         },
         {
             "name": "wpackagist-plugin/user-role-editor",
-            "version": "4.22",
+            "version": "4.23.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/user-role-editor/",
-                "reference": "tags/4.22"
+                "reference": "tags/4.23.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-role-editor.4.22.zip",
+                "url": "https://downloads.wordpress.org/plugin/user-role-editor.4.23.2.zip",
                 "reference": null,
                 "shasum": null
             },

@@ -11,17 +11,49 @@ function products_form_metaboxes() {
     // Start with an underscore to hide fields from custom fields list
     $prefix = '_ad_products_';
 
+    $options_tables = array();
+    $options_tables[0]='Please select...';
 
-    $options[0]='Please select...';
-    if( class_exists( RGFormsModel ) ) {
-        foreach( RGFormsModel::get_forms(null, 'title') AS $form):
-            $options[$form->id] = $form->title;
+    if( class_exists( TablePress ) ) {
+        $table_q_args = array(
+            'post_type' => 'tablepress_table',
+            'posts_per_page' => -1
+        );
+        $table_query = get_posts($table_q_args);
+        $tablepress_lookup_json = get_option('tablepress_tables');
+        $tablepress_lookup_decode = json_decode($tablepress_lookup_json, true);
+        $tablepress_lookup = array_flip($tablepress_lookup_decode['table_post']);
+
+        foreach($table_query as $table):
+            $table_id = $tablepress_lookup[$table->ID];
+            $options_tables[$table_id] = $table->post_title;
         endforeach;
+
     }
 
-    /**
-     * Initiate the metabox
-     */
+    $options_accessories = array();
+    $options_accessories[0]='Please select...';
+
+    $accessory_q_args = array(
+        'post_type' => 'products',
+        'posts_per_page' => -1,
+        'tax_query' => array(
+    		array(
+    			'taxonomy' => 'product-types',
+    			'field'    => 'slug',
+    			'terms'    => 'accessories',
+    		),
+    	),
+    );
+    $accessory_query = get_posts($accessory_q_args);
+
+    foreach($accessory_query as $accessory):
+        $options_accessories[$accessory->ID] = $accessory->post_title;
+    endforeach;
+
+
+    ///// GALLERY
+
     $cmb = new_cmb2_box( array(
         'id'            => 'gallery_meta',
         'title'         => __( 'Product Gallery', 'cmb2' ),
@@ -46,9 +78,40 @@ function products_form_metaboxes() {
         ),
     ) );
 
-    /**
-     * Initiate the metabox
-     */
+
+    ///// FINISHES CHECKBOXES
+
+
+    $cmb = new_cmb2_box( array(
+        'id'            => 'finishes_meta',
+        'title'         => __( 'Product Finishes', 'cmb2' ),
+        'object_types'  => array( 'products', ), // Post type
+        'context'       => 'normal',
+        'priority'      => 'high',
+        'show_names'    => true, // Show field names on the left
+        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+        // 'closed'     => true, // Keep the metabox closed by default
+    ) );
+
+    $cmb->add_field( array(
+        'name' => 'Select Finishes',
+        'desc' => '',
+        'id'   => $prefix . 'finishes',
+        'type' => 'multicheck',
+        'options' => array(
+            'bzp' => 'Bright Zinc Plate',
+            'pg' => 'Pre Galvanised',
+            'hdg' => 'Hot Dip Galvanised',
+            'epc' => 'Epoxy Powder Coat',
+            'ss' => 'Stainless Steel',
+            'wp' => 'Waterproof',
+        ),
+    ) );
+
+
+    //// REPEATABLE TABLE SELECT
+
+
     $cmb = new_cmb2_box( array(
         'id'            => 'table_meta',
         'title'         => __( 'Table Select', 'cmb2' ),
@@ -63,21 +126,53 @@ function products_form_metaboxes() {
 
     // Regular text field
     $cmb->add_field( array(
-        'name'       => __( 'Pick a Table', 'cmb2' ),
+        'name'       => __( 'Add Product Tables', 'cmb2' ),
         //'desc'       => __( 'field description (optional)', 'cmb2' ),
         'id'         => $prefix . 'table_dropdown',
         'type'       => 'select',
-        'options'    => $options,
+        'options'    => $options_tables,
         //'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
         // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
         // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
         // 'on_front'        => false, // Optionally designate a field to wp-admin only
-        // 'repeatable'      => true,
+        'repeatable'      => true,
     ) );
+
+
+    //// ACCESSORIES REPEATABLE
+
+    $cmb = new_cmb2_box( array(
+        'id'            => 'accesories_meta',
+        'title'         => __( 'Product Accessories', 'cmb2' ),
+        'object_types'  => array( 'products', ), // Post type
+        'context'       => 'normal',
+        'priority'      => 'high',
+        'show_names'    => true, // Show field names on the left
+        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+        // 'closed'     => true, // Keep the metabox closed by default
+    ) );
+
+    // Regular text field
+    $cmb->add_field( array(
+        'name'       => __( 'Select Accessory', 'cmb2' ),
+        //'desc'       => __( 'field description (optional)', 'cmb2' ),
+        'id'         => $prefix . 'select_accessory',
+        'type'       => 'select',
+        'options'    => $options_accessories,
+        //'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
+        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+        // 'on_front'        => false, // Optionally designate a field to wp-admin only
+         'repeatable'      => true,
+    ) );
+
+
+
+    //// TECH SPEC GROUP
 
     $cmb = new_cmb2_box( array(
         'id'            => 'tech_spec_meta',
-        'title'         => __( 'Columns', 'cmb2' ),
+        'title'         => __( 'Tech Spec', 'cmb2' ),
         'object_types'  => array( 'products', ), // Post type
         'context'       => 'normal',
         'priority'      => 'high',
@@ -87,25 +182,41 @@ function products_form_metaboxes() {
         // 'closed'     => true, // Keep the metabox closed by default
     ) );
 
-    // Regular text field
-    $cmb->add_field( array(
-        'name'       => __( 'Column 1 Heading', 'cmb2' ),
-        //'desc'       => __( 'field description (optional)', 'cmb2' ),
-        'id'         => $prefix . 'col_1_heading',
-        'type'       => 'text',
-        //'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
-        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-        // 'on_front'        => false, // Optionally designate a field to wp-admin only
-        // 'repeatable'      => true,
+    $group_field_id = $cmb->add_field( array(
+        'id'          => 'tech_spec_group',
+        'type'        => 'group',
+        //'description' => __( 'Generates reusable form entries', 'cmb2' ),
+        // 'repeatable'  => false, // use false if you want non-repeatable group
+        'options'     => array(
+            'group_title'   => __( 'Tech Spec Row {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+            'add_button'    => __( 'Add Another Tech Spec Row', 'cmb2' ),
+            'remove_button' => __( 'Remove Tech Spec Row', 'cmb2' ),
+            'sortable'      => true, // beta
+            // 'closed'     => true, // true to have the groups closed by default
+        ),
     ) );
 
-    // Regular text field
-    $cmb->add_field( array(
-        'name'       => __( 'Column 1', 'cmb2' ),
-        //'desc'       => __( 'field description (optional)', 'cmb2' ),
-        'id'         => $prefix . 'col_1',
-        'type'       => 'wysiwyg',
+    // Id's for group's fields only need to be unique for the group. Prefix is not needed.
+    $cmb->add_group_field( $group_field_id, array(
+        'name' => 'Row Title',
+        'id'   => 'title',
+        'type' => 'text',
+        // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+    ) );
+
+    // Id's for group's fields only need to be unique for the group. Prefix is not needed.
+    $cmb->add_group_field( $group_field_id, array(
+        'name' => 'Row Image',
+        'id'   => 'image',
+        'type' => 'file',
+        // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+    ) );
+
+    // Id's for group's fields only need to be unique for the group. Prefix is not needed.
+    $cmb->add_group_field( $group_field_id, array(
+        'name' => 'Row Content',
+        'id'   => 'content',
+        'type' => 'wysiwyg',
         'options' => array(
             'wpautop' => true, // use wpautop?
             'media_buttons' => false, // show insert/upload button(s)
@@ -119,50 +230,8 @@ function products_form_metaboxes() {
             'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
             //'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()
         ),
-        //'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
-        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-        // 'on_front'        => false, // Optionally designate a field to wp-admin only
-        // 'repeatable'      => true,
+        // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
     ) );
 
-    // Regular text field
-    $cmb->add_field( array(
-        'name'       => __( 'Column 2 Heading', 'cmb2' ),
-        //'desc'       => __( 'field description (optional)', 'cmb2' ),
-        'id'         => $prefix . 'col_2_heading',
-        'type'       => 'text',
-        //'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
-        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-        // 'on_front'        => false, // Optionally designate a field to wp-admin only
-        // 'repeatable'      => true,
-    ) );
-
-    // Regular text field
-    $cmb->add_field( array(
-        'name'       => __( 'Column 2', 'cmb2' ),
-        //'desc'       => __( 'field description (optional)', 'cmb2' ),
-        'id'         => $prefix . 'col_2',
-        'type'       => 'wysiwyg',
-        'options' => array(
-            'wpautop' => true, // use wpautop?
-            'media_buttons' => false, // show insert/upload button(s)
-            //'textarea_name' => $editor_id, // set the textarea name to something different, square brackets [] can be used here
-            'textarea_rows' => 4, // rows="..."
-            //'tabindex' => '',
-            //'editor_css' => '', // intended for extra styles for both visual and HTML editors buttons, needs to include the `<style>` tags, can use "scoped".
-            //'editor_class' => '', // add extra class(es) to the editor textarea
-            'teeny' => true, // output the minimal editor config used in Press This
-            'dfw' => false, // replace the default fullscreen with DFW (needs specific css)
-            'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
-            //'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()
-        ),
-        //'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
-        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-        // 'on_front'        => false, // Optionally designate a field to wp-admin only
-        // 'repeatable'      => true,
-    ) );
 
 }
