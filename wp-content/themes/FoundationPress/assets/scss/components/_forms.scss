@@ -1,0 +1,18 @@
+.container{
+    .gform_wrapper{
+    margin-top:0px;
+    }
+    .gform_fields{
+
+        input,textarea,select{
+            border-radius:rem-calc($rem-base);
+            border-color: $body-font-color;
+        }
+
+        label{
+            font-size:rem-calc(14px);
+            text-transform: lowercase;
+            line-height:1;
+        }
+    }
+}

@@ -70,10 +70,4 @@ function fp_grid_metaboxes() {
         'type' => 'file',
     ) );
 
-    $cmb->add_group_field( $group_field_id, array(
-        'name' => 'Block Image Alt Text',
-        'id'   => 'alt-text',
-        'type' => 'text',
-    ) );
-
 }

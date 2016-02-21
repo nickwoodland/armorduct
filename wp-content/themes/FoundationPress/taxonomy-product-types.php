@@ -26,7 +26,6 @@ get_header(); ?>
 <?php $child_terms = get_terms('product-types',$child_term_args ); ?>
 
 <div id="page-full-width" role="main">
-	<article class="main-content">
 
         <?php if(!empty($child_terms)): ?>
 
@@ -60,8 +59,6 @@ get_header(); ?>
         	<?php } ?>
 
         <?php endif; ?>
-
-	</article>
 
 </div>
 

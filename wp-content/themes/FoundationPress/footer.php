@@ -14,9 +14,7 @@
 		</section>
 		<div id="footer-container">
 			<footer id="footer">
-				<?php do_action( 'foundationpress_before_footer' ); ?>
-				<?php dynamic_sidebar( 'footer-widgets' ); ?>
-				<?php do_action( 'foundationpress_after_footer' ); ?>
+				<?php include(locate_template('parts/footer-contact.php')); ?>
 			</footer>
 		</div>
 
@@ -30,6 +28,7 @@
 
 
 <?php wp_footer(); ?>
+<script type="text/javascript">document.getElementsByTagName('body')[0].className+=' js'</script>
 <?php do_action( 'foundationpress_before_closing_body' ); ?>
 </body>
 </html>

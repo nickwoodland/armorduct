@@ -51,6 +51,24 @@ function products_form_metaboxes() {
         $options_accessories[$accessory->ID] = $accessory->post_title;
     endforeach;
 
+    ///// Product ref
+    $cmb = new_cmb2_box( array(
+        'id'            => 'ref_meta',
+        'title'         => __( 'Product Reference', 'cmb2' ),
+        'object_types'  => array( 'products', ), // Post type
+        'context'       => 'normal',
+        'priority'      => 'high',
+        'show_names'    => true, // Show field names on the left
+        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+        // 'closed'     => true, // Keep the metabox closed by default
+    ) );
+
+    $cmb->add_field( array(
+        'name' => 'Reference Code',
+        'desc' => '',
+        'id'   => $prefix . 'ref_code',
+        'type' => 'text',
+    ) );
 
     ///// GALLERY
 
@@ -123,8 +141,6 @@ function products_form_metaboxes() {
         // 'closed'     => true, // Keep the metabox closed by default
     ) );
 
-
-    // Regular text field
     $cmb->add_field( array(
         'name'       => __( 'Add Product Tables', 'cmb2' ),
         //'desc'       => __( 'field description (optional)', 'cmb2' ),

@@ -12,12 +12,13 @@ get_header(); ?>
 <?php $prefix = '_ad_products_'; ?>
 
 <?php $finishes_meta = get_post_meta($post->ID, $prefix.'finishes', true); ?>
+<?php $ref_meta = get_post_meta($post->ID, $prefix.'ref_code', true); ?>
 <?php $gallery_meta = get_post_meta($post->ID, $prefix.'gallery_images', true); ?>
 <?php $table_meta = get_post_meta($post->ID, $prefix.'table_dropdown', true); ?>
 <?php $accessories_meta = get_post_meta($post->ID, $prefix.'select_accessory', true); ?>
 <?php $tech_spec_meta = get_post_meta($post->ID, 'tech_spec_group', true); ?>
 
-<div id="page-full-width" role="main">
+<div id="page-full-width" class="single-product" role="main">
 	<?php do_action( 'foundationpress_before_content' ); ?>
 
 	<?php while ( have_posts() ) : the_post(); ?>
@@ -25,18 +26,23 @@ get_header(); ?>
 
 			<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
 
-			<div class="row">
-				<header class="columns medium-3">
-					<h1 class="entry-title"><?php the_title(); ?></h1>
+			<div class="row xxlarge-collapse product__heading">
+				<header class="columns medium-4 large-3">
+					<h2 class="entry-title"><?php the_title(); ?></h2>
 				</header>
-				<div class="columns medium-9">
+				<div class="columns medium-8 large-9">
 					<?php if($finishes_meta != false): ?>
 						<div class="product-finishes__wrapper">
+
+							<span class="product-finishes__title">
+								For special finishes please add -
+							</span>
+
 							<?php foreach($finishes_meta as $finish): ?>
 								<div class="product-finish">
 									<? $finish_details_array = finishes_lookup($finish); ?>
-									<img src="<?php echo $finish_details_array['img']; ?>" alt="icon for <?php echo $finish_details_array['title']; ?>"/>
-									<h4><?php echo $finish_details_array['title']; ?></h4>
+									<img src="<?php echo get_stylesheet_directory_uri() . $finish_details_array['img']; ?>" alt="icon for <?php echo $finish_details_array['title']; ?>"/>
+									<?php /* <h4><?php echo $finish_details_array['title']; ?></h4> */ ?>
 								</div>
 							<?php endforeach; ?>
 						</div>
@@ -44,15 +50,31 @@ get_header(); ?>
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="columns medium-3">
+			<div class="row xxlarge-collapse landmark--large">
+				<div class="columns large-3">
 					<?php if($gallery_meta != false): ?>
 						<div class="product-gallery__wrapper">
 							<?php include(locate_template('parts/product-gallery.php')); ?>
 						</div>
 					<?php endif;?>
+					<?php if($ref_meta): ?>
+					<div class="product-ref__wrapper">
+						<span class="product-ref">
+							<?php echo $ref_meta; ?>
+						</span>
+					</div>
+					<?php endif; ?>
+					<nav class="product__nav">
+						<span>
+							<a href="#product-description">description</a>
+							<a href="#product-accessories">accessories</a>
+						</span>
+						<span>
+							<a href="#product-quote">quote request</a>
+						</span>
+					</nav>
 				</div>
-				<div class="columns medium-9">
+				<div class="columns large-9">
 					<?php if($table_meta != false): ?>
 						<?php include(locate_template('parts/product-table-loop.php')); ?>
 					<?php endif;?>
@@ -60,22 +82,23 @@ get_header(); ?>
 			</div>
 
 			<?php if($accessories_meta != false): ?>
-				<div class="product-accessories__wrapper">
+				<h3><?php the_title(); ?> accessories</h3>
+				<div id="product-accessories" class="product-accessories__wrapper row row--flush landmark--large">
 					<?php include(locate_template('parts/product-accessories-loop.php')); ?>
 				</div>
 			<?php endif; ?>
 
 			<?php if($tech_spec_meta != false): ?>
-				<div class="product-tech-spec__wrapper">
+				<div id="product-description" class="product-tech-spec__wrapper row landmark--large">
+					<h3>product information</h3>
 					<?php include(locate_template('parts/product-tech-spec-loop.php')); ?>
 				</div>
 			<?php endif; ?>
 
-			<div class="row">
+			<div id ="product-quote" class="product-enquiry__wrapper" >
+				<h3>quote request</h3>
 				<div class="columns small-12">
-					<div class="product-enquiry__wrapper">
-						<?php gravity_form( 1, true, false, false, null, false); ?>
-					</div>
+					<?php gravity_form( 1, false, false, false, null, false); ?>
 				</div>
 			</div>
 

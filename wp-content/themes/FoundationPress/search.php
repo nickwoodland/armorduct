@@ -10,7 +10,7 @@
 get_header(); ?>
 
 <div class="row">
-	<div class="small-12 large-8 columns" role="main">
+	<div class="small-12 columns" role="main">
 
 		<?php do_action( 'foundationpress_before_content' ); ?>
 
@@ -19,7 +19,7 @@ get_header(); ?>
 	<?php if ( have_posts() ) : ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'content', get_post_format() ); ?>
+			<?php include(locate_template('parts/search-listing.php'));?>
 		<?php endwhile; ?>
 
 		<?php else : ?>
@@ -40,6 +40,5 @@ get_header(); ?>
 	<?php do_action( 'foundationpress_after_content' ); ?>
 
 	</div>
-	<?php get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>

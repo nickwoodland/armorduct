@@ -16,14 +16,15 @@
 
 get_header(); ?>
 
-<div id="page" role="main">
-	<article class="main-content">
+<div id="page-full-width" role="main">
+
 	<?php if ( have_posts() ) : ?>
 
-		<?php /* Start the Loop */ ?>
-		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'content', get_post_format() ); ?>
-		<?php endwhile; ?>
+		<div class="row collapse">
+
+			<?php include(locate_template('parts/news-post-loop.php')); ?>
+
+		</div>
 
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
@@ -38,8 +39,7 @@ get_header(); ?>
 			</nav>
 		<?php } ?>
 
-	</article>
-	<?php get_sidebar(); ?>
+	<?php // get_sidebar(); ?>
 
 </div>
 

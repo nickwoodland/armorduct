@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "244d595f2e0c2cadf89ad587f5e32c69",
-    "content-hash": "87a2b7a46ef73c5003d7365159824d14",
+    "hash": "c8c49b2774386acf66b4bdac24aa6449",
+    "content-hash": "5a8bf1976f557c7bac0e109855a4cfd6",
     "packages": [
         {
             "name": "composer/installers",
@@ -106,16 +106,36 @@
             "time": "2016-01-27 12:54:22"
         },
         {
-            "name": "wpackagist-plugin/better-wp-security",
-            "version": "5.2.0",
+            "name": "wpackagist-plugin/animated-gif-resize",
+            "version": "1.0",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/better-wp-security/",
-                "reference": "tags/5.2.0"
+                "url": "http://plugins.svn.wordpress.org/animated-gif-resize/",
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/better-wp-security.5.2.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/animated-gif-resize.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/animated-gif-resize/"
+        },
+        {
+            "name": "wpackagist-plugin/better-wp-security",
+            "version": "5.2.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/better-wp-security/",
+                "reference": "tags/5.2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/better-wp-security.5.2.1.zip",
                 "reference": null,
                 "shasum": null
             },

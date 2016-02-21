@@ -8,12 +8,12 @@ if ( ! function_exists( 'finishes_lookup' ) ) :
         endif;
 
         $finishes_array = array(
-            'bzp' => array('title' => 'Bright Zinc Plate', 'img' => 'img_path'),
-            'pg' =>  array('title' => 'Pre Galvanised', 'img' => 'img_path'),
-            'hdg' =>  array('title' => 'Hot Dip Galvanised', 'img' => 'img_path'),
-            'epc' =>  array('title' => 'Epoxy Powder Coat', 'img' => 'img_path'),
-            'ss' =>  array('title' => 'Stainless Steel', 'img' => 'img_path'),
-            'wp' =>  array('title' => 'Waterproof', 'img' => 'img_path'),
+            'bzp' => array('title' => 'Bright Zinc Plate', 'img' => '/assets/images/finishes/bzp.png'),
+            'pg' =>  array('title' => 'Pre Galvanised', 'img' => '/assets/images/finishes/pg.png'),
+            'hdg' =>  array('title' => 'Hot Dip Galvanised', 'img' => '/assets/images/finishes/hdg.png'),
+            'epc' =>  array('title' => 'Epoxy Powder Coat', 'img' => '/assets/images/finishes/pc.png'),
+            'ss' =>  array('title' => 'Stainless Steel', 'img' => '/assets/images/finishes/ss.png'),
+            'wp' =>  array('title' => 'Waterproof', 'img' => '/assets/images/finishes/wp.png'),
         );
 
         $finish_return = $finishes_array[$finish];

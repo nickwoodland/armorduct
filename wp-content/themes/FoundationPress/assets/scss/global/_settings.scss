@@ -41,14 +41,29 @@
 
 @import '../../components/foundation-sites/scss/util/util';
 
+@font-face {
+    font-family: 'gasaltblack';
+    src: url('../fonts/gasalt-black/gasalt-black-webfont.eot');
+    src: url('../fonts/gasalt-black/gasalt-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gasalt-black/gasalt-black-webfont.woff2') format('woff2'),
+         url('../fonts/gasalt-black/gasalt-black-webfont.woff') format('woff'),
+         url('../fonts/gasalt-black/gasalt-black-webfont.ttf') format('truetype'),
+         url('../fonts/gasalt-black/gasalt-black-webfont.svg#gasaltblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
 // 1. Global
 // ---------
-
-$global-font-size: 100%;
-$global-width: rem-calc(1440);
+$rem-base: 15px;
+$global-font-size: 18px;
+$global-width: rem-calc(1600);
 $global-lineheight: 1.5;
-$primary-color: #2199e8;
-$secondary-color: #777;
+$primary-color: #497593;
+$secondary-color: #00a1be;
 $success-color: #3adb76;
 $warning-color: #ffae00;
 $alert-color: #ec5840;
@@ -58,8 +73,9 @@ $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
-$body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-color: #002848;
+$body-font-family: 'gasaltblack', Helvetica, Roboto, Arial, sans-serif;
+$secondary-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -78,7 +94,7 @@ $breakpoints: (
   xlarge: 1200px,
   xxlarge: 1440px,
 );
-$breakpoint-classes: (small medium large);
+$breakpoint-classes: (small medium large xlarge);
 
 // 3. The Grid
 // -----------
@@ -86,8 +102,8 @@ $breakpoint-classes: (small medium large);
 $grid-row-width: $global-width;
 $grid-column-count: 12;
 $grid-column-responsive-gutter: (
-  small: 20px,
-  medium: 30px,
+  small: $rem-base,
+  medium: $rem-base*2,
 );
 $grid-column-align-edge: true;
 $block-grid-max: 8;
@@ -299,7 +315,7 @@ $dropdown-sizes: (
 // 17. Dropdown Menu
 // -----------------
 
-$dropdownmenu-arrows: true;
+$dropdownmenu-arrows: false;
 $dropdownmenu-arrow-color: $anchor-color;
 $dropdownmenu-min-width: 200px;
 $dropdownmenu-background: $white;
@@ -541,6 +557,6 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0;
-$topbar-background: #121212;
-$topbar-link-color: #ffffff;
+$topbar-background: #ffffff;
+$topbar-link-color: $body-font-color;
 $topbar-input-width: 200px;

@@ -57,8 +57,13 @@ require_once( 'library/cmbs-show-on-filters.php' );
 /** Products CPT */
 require_once( 'library/cpt-products.php' );
 
+/** Products CPT */
+require_once( 'library/cpt-catalogues.php');
 /** Products CMB */
 require_once( 'library/cmbs-products.php' );
+
+/** Products CMB */
+require_once( 'library/cmbs-catalogues.php' );
 
 /** Products CMB */
 require_once( 'library/cmbs-product-type.php' );
@@ -69,6 +74,8 @@ require_once( 'library/cmbs-fp.php' );
 /** finishes lookup array */
 require_once( 'library/finishes-lookup.php' );
 
+/** finishes lookup array */
+require_once( 'library/gforms-catalogues.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );

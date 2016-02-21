@@ -21,7 +21,7 @@
 @import 'font-awesome';
 @import 'motion-ui';
 
-// Foundation global styles 
+// Foundation global styles
 @include foundation-global-styles;
 
 // Individual foundation components
@@ -69,16 +69,33 @@
   Add your scss files below to structure your project styles
 */
 
+@import "global/landmark"; // Override the default WordPress styling for some elements
+@import "global/page"; // Override the default WordPress styling for some elements
+
 // Modules
 @import "modules/topbar";
 @import "modules/footer";
 @import "modules/sidebar";
+@import "modules/products";
+@import "modules/catalogues";
+
 
 // Components
 @import "components/buttons";
 @import "components/featured-image";
 @import "components/dividers";
 @import "components/off-canvas";
+@import "components/flag";
+@import "components/grid-block";
+@import "components/finishes";
+@import "components/product-gallery";
+@import "components/rows";
+@import "components/searchform";
+@import "components/tables";
+@import "components/forms";
+@import "components/mobile-nav";
+
+
 
 // Templates
 @import "templates/front";
