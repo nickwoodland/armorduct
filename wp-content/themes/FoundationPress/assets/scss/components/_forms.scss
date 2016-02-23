@@ -9,10 +9,22 @@
             border-color: $body-font-color;
         }
 
-        label{
+        .gfield_label {
             font-size:rem-calc(14px);
+            font-family: $secondary-font-family;
             text-transform: lowercase;
             line-height:1;
+            color: $body-font-color;
+        }
+
+        .ginput_complex label {
+            font-size:rem-calc(12px);
+            font-family: $secondary-font-family;
+            text-transform: lowercase;
+            line-height:1;
+            color: lighten($body-font-color, 10%);
+            margin-top:-10px;
+            margin-bottom:$rem-base;
         }
     }
 }

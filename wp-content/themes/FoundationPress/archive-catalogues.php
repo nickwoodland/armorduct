@@ -17,8 +17,7 @@
  */
 
 get_header(); ?>
-<?php $form_submit = false; ?>
-<?php $form_submit = $_GET['form_submit']; ?>
+<?php $form_submit = isset($_GET['form_submit']) ? $_GET['form_submit'] : false; ?>
 <div class="row collapse" data-equalizer data-equalize-on="large">
 	<div class="columns xlarge-9 large-12" id="post-<?php the_ID(); ?>" data-equalizer-watch>
 		<article class="main-content catalogues-sidebar">

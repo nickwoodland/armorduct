@@ -6,5 +6,58 @@
         padding-left:$rem-base*2;
     }
 
+    .tablepress{
+
+        tbody, tbody td{
+            border:1px solid #1b1985;
+        }
+
+        .odd td{
+            background: 0 0;
+
+        }
+        tbody td.column-1{
+            // background-color: #c7c5c5;
+        }
+
+        .row-1 td{
+            //background-color: #ededed;
+        }
+
+
+        &.highlight{
+            tr{
+
+                &.row-highlight-red{
+                    td{
+                    background-color: red;
+                    }
+                }
+
+                &.row-highlight-blue{
+                    td{
+                    background-color: blue;
+                    }
+                }
+
+                &.row-highlight-grey{
+                    td{
+                    background-color: grey;
+                    }
+                }
+
+                &.row-highlight-bold{
+                    td{
+                    font-weight:bold;
+                    }
+                }
+
+                td:last-of-type{
+                    display:none;
+                }
+            }
+        }
+    }
+
 
 }

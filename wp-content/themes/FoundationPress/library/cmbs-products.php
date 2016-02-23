@@ -51,6 +51,19 @@ function products_form_metaboxes() {
         $options_accessories[$accessory->ID] = $accessory->post_title;
     endforeach;
 
+    $related_products = array();
+    $related_products[0]='Please select...';
+
+    $r_prod_q_args = array(
+        'post_type' => 'products',
+        'posts_per_page' => -1,
+    );
+    $r_prod_query = get_posts($r_prod_q_args);
+
+    foreach($r_prod_query as $r_prod):
+        $related_products[$r_prod->ID] = $r_prod->post_title;
+    endforeach;
+
     ///// Product ref
     $cmb = new_cmb2_box( array(
         'id'            => 'ref_meta',
@@ -175,6 +188,33 @@ function products_form_metaboxes() {
         'id'         => $prefix . 'select_accessory',
         'type'       => 'select',
         'options'    => $options_accessories,
+        //'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
+        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+        // 'on_front'        => false, // Optionally designate a field to wp-admin only
+         'repeatable'      => true,
+    ) );
+
+    //// RELATED PRODUCTS REPEATABLE
+
+    $cmb = new_cmb2_box( array(
+        'id'            => 'related_meta',
+        'title'         => __( 'Related Products', 'cmb2' ),
+        'object_types'  => array( 'products', ), // Post type
+        'context'       => 'normal',
+        'priority'      => 'high',
+        'show_names'    => true, // Show field names on the left
+        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+        // 'closed'     => true, // Keep the metabox closed by default
+    ) );
+
+    // Regular text field
+    $cmb->add_field( array(
+        'name'       => __( 'Select Related Products', 'cmb2' ),
+        //'desc'       => __( 'field description (optional)', 'cmb2' ),
+        'id'         => $prefix . 'select_r_products',
+        'type'       => 'select',
+        'options'    => $related_products,
         //'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
         // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
         // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter

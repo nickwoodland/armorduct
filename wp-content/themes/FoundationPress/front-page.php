@@ -8,8 +8,8 @@ get_header(); ?>
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
-    <div class="row collapse" data-equalizer data-equalize-on="large">
-        <div class="columns xlarge-9 large-12" id="post-<?php the_ID(); ?>" data-equalizer-watch>
+    <div class="row collapse" ddata-equalizer data-equalize-on="large">
+        <div class="columns xlarge-9 large-12" id="post-<?php the_ID(); ?>" ddata-equalizer-watch>
             <?php $grid_meta = get_post_meta($post->ID, 'grid_block_group', true); ?>
 
             <?php if(!empty($grid_meta)): ?>
@@ -41,7 +41,7 @@ get_header(); ?>
                 </div>
             <?php endif; ?>
         </div>
-        <div class="columns large-3 show-for-xlarge fp-flag__wrapper" data-equalizer-watch>
+        <div class="columns large-3 show-for-xlarge fp-flag__wrapper" ddata-equalizer-watch>
             <div class="fp-flag">
             </div>
             <?php $sidebar_img_1 = of_get_option('sidebar_img_1'); ?>

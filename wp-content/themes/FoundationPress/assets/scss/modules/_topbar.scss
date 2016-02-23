@@ -3,10 +3,15 @@
     position:relative;
 
     .top-bar__top, .top-bar__nav{
-        padding-right:rem-calc(45px);
-        padding-left:rem-calc(45px);
+        padding-right:rem-calc(10px);
+        padding-left:rem-calc(10px);
 
-        @include breakpoint(xlarge) {
+        @include breakpoint(large) {
+            padding-right:rem-calc(30px);
+            padding-left:rem-calc(30px);
+        }
+
+        @include breakpoint(xxxlarge) {
             padding-left:0px;
         }
     }

@@ -1,3 +1,21 @@
+#page-full-width{
+
+        article.page, article.nothing-found{
+            padding-right:rem-calc(10px);
+            padding-left:rem-calc(10px);
+
+            @include breakpoint(large) {
+                padding-right:rem-calc(30px);
+                padding-left:rem-calc(30px);
+            }
+
+            @include breakpoint(xxxlarge) {
+                padding-left:0px;
+            }
+        }
+}
+
+
 .site-title{
     text-align:center;
 
@@ -67,11 +85,13 @@ article.page{
 
     .entry-content{
         font-family:$secondary-font-family;
+        font-size:rem-calc(15px);
     }
 }
 
 .contact__address{
     font-family:$secondary-font-family;
+    font-size:rem-calc(15px);
     address{
         text-decoration: none;
         font-style:normal;

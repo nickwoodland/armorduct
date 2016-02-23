@@ -10,8 +10,8 @@ get_header(); ?>
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
-    <div class="row collapse" data-equalizer data-equalize-on="large">
-        <div class="page-flag-sidebar columns xlarge-9 large-12" id="post-<?php the_ID(); ?>" data-equalizer-watch>
+    <div class="row collapse" ddata-equalizer data-equalize-on="large">
+        <div class="page-flag-sidebar columns xlarge-9 large-12" id="post-<?php the_ID(); ?>" ddata-equalizer-watch>
             <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
               <header>
                   <h1 class="entry-title"><?php the_title(); ?></h1>
@@ -29,7 +29,7 @@ get_header(); ?>
               <?php do_action( 'foundationpress_page_after_comments' ); ?>
             </article>
         </div>
-        <div class="columns large-3 show-for-xlarge fp-flag__wrapper" data-equalizer-watch>
+        <div class="columns large-3 show-for-xlarge fp-flag__wrapper" ddata-equalizer-watch>
             <div class="fp-flag">
             </div>
         </div>

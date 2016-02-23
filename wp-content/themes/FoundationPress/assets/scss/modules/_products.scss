@@ -1,8 +1,22 @@
-.single-product{
+#page-full-width.single-product{
         h2, h3{
             font-size:rem-calc($rem-base*2);
             line-height:1;
             text-transform: lowercase;
+        }
+
+        article.products{
+            padding-right:rem-calc(10px);
+            padding-left:rem-calc(10px);
+
+            @include breakpoint(large) {
+                padding-right:rem-calc(30px);
+                padding-left:rem-calc(30px);
+            }
+
+            @include breakpoint(xxxlarge) {
+                padding-left:0px;
+            }
         }
 }
 
@@ -87,4 +101,6 @@
     border-radius: $rem-base;
     background-color: $primary-color;
     color: $white;
+    position:relative;
+    z-index:9999;
 }
