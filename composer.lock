@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c8c49b2774386acf66b4bdac24aa6449",
-    "content-hash": "5a8bf1976f557c7bac0e109855a4cfd6",
+    "hash": "6c14b3d4af7185c772dd8d8383ae6d26",
+    "content-hash": "7b372e73d0c2dd5cbeae3dda26ddae74",
     "packages": [
         {
             "name": "composer/installers",
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "6213d900e92647831f7a406d5c530ea1f3d4360e"
+                "reference": "b3d1f3125a77af66d2bfd934c775150e4c9aecc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/6213d900e92647831f7a406d5c530ea1f3d4360e",
-                "reference": "6213d900e92647831f7a406d5c530ea1f3d4360e",
+                "url": "https://api.github.com/repos/composer/installers/zipball/b3d1f3125a77af66d2bfd934c775150e4c9aecc3",
+                "reference": "b3d1f3125a77af66d2bfd934c775150e4c9aecc3",
                 "shasum": ""
             },
             "require": {
@@ -103,7 +103,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-01-27 12:54:22"
+            "time": "2016-02-27 14:38:36"
         },
         {
             "name": "wpackagist-plugin/animated-gif-resize",
@@ -304,6 +304,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/tablepress/"
+        },
+        {
+            "name": "wpackagist-plugin/taxonomy-terms-order",
+            "version": "1.4.7",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/taxonomy-terms-order/",
+                "reference": "tags/1.4.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/taxonomy-terms-order.1.4.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/taxonomy-terms-order/"
         },
         {
             "name": "wpackagist-plugin/user-role-editor",

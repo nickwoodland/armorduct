@@ -22,7 +22,7 @@
         <?php endif; ?>
 
         <?php if($tech_content): ?>
-            <div class="columns <?php echo ($tech_image ? 'medium-10' : 'small-12'); ?>">
+            <div class="columns <?php echo ($tech_image ? 'medium-10' : 'small-12'); ?> tech-spec__content">
                 <?php echo apply_filters('the_content', $tech_content); ?>
             </div>
         <?php endif; ?>

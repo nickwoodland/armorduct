@@ -30,6 +30,7 @@
       "wpackagist-plugin/wordpress-seo": "~3.0.7",
       "wpackagist-plugin/user-role-editor": "~4.23",
       "wpackagist-plugin/tablepress": "1.7",
-      "wpackagist-plugin/animated-gif-resize": "1.0"
+      "wpackagist-plugin/animated-gif-resize": "1.0",
+      "wpackagist-plugin/taxonomy-terms-order": "1.4.7",
   }
 }

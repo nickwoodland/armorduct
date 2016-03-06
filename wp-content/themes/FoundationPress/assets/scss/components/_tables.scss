@@ -8,7 +8,7 @@
 
     .tablepress{
 
-        tbody, tbody td{
+        tbody, tbody td, thead th{
             border:1px solid #1b1985;
         }
 
@@ -28,23 +28,24 @@
         &.highlight{
             tr{
 
-                &.row-highlight-red{
-                    td{
-                    background-color: red;
-                    }
-                }
-
                 &.row-highlight-blue{
                     td{
-                    background-color: blue;
+                    background-color: #D4EAF6;
                     }
                 }
 
-                &.row-highlight-grey{
+                &.row-highlight-lgrey{
                     td{
-                    background-color: grey;
+                    background-color: #EAEAEA;
                     }
                 }
+
+                &.row-highlight-dgrey{
+                    td{
+                    background-color: #CFCECF;
+                    }
+                }
+
 
                 &.row-highlight-bold{
                     td{
@@ -53,6 +54,12 @@
                 }
 
                 td:last-of-type{
+                    display:none;
+                }
+            }
+
+            thead{
+                th:last-of-type{
                     display:none;
                 }
             }

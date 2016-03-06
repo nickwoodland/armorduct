@@ -17,13 +17,16 @@
  */
 
 get_header(); ?>
-
 <?php $product_type_args = array(
     'parent'        => 0,
-    'hide_empty' => false
+    'hide_empty' => false,
 ); ?>
-<?php $product_type_terms = get_terms('product-types',$product_type_args ); ?>
+<?php $accessories_term = get_term_by('slug', 'accessories', 'product-types'); ?>
+<?php if($accessories_term): ?>
+    <?php $product_type_args['exclude'] = $accessories_term->term_id; ?>
+<?php endif; ?>
 
+<?php $product_type_terms = get_terms('product-types',$product_type_args ); ?>
 <div id="page-full-width" role="main">
 
         <?php if(!empty($product_type_terms)): ?>

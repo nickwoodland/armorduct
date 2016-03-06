@@ -10,6 +10,8 @@
         vertical-align: top;
         display:none;
         width:15%;
+        font-family:$secondary-font-family;
+        font-size:rem-calc(14px);
 
         @include breakpoint(large) {
             display:inline-block;

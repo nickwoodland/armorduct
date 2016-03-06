@@ -40,11 +40,13 @@ function stickySidebar(flag){
 
     if(footercheck > 0){
 
-        sidebarheight = windowheight - flagpostop - footerheight;
+        //sidebar is tall enough, yo
+        //sidebarheight = windowheight - flagpostop - footerheight;
 
     }else{
 
         sidebarheight = footerpostop - flagpostop;
+
     }
 
     flag.css({

@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
       dots: false,
       arrows: false,
       autoplay: true,
-      autoplaySpeed: 2000,
+      autoplaySpeed: 3000,
        adaptiveHeight: true
     });
 

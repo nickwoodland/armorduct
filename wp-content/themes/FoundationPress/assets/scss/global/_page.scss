@@ -58,6 +58,8 @@
 
     @include breakpoint(medium) {
       text-align:right;
+      margin-top:30px;
+      line-height:1;
     }
 
     a{
@@ -107,4 +109,11 @@ article.page{
 
 .sidebar-slider{
     margin-left:52px;
+    margin-bottom:26px;
+}
+
+article.nothing-found{
+    .page-header,.page-content{
+        text-transform:lowercase;
+    }
 }

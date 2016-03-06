@@ -20,7 +20,7 @@ get_header(); ?>
 
 <?php $current_term = get_queried_object(); ?>
 <?php $child_term_args = array(
-    'child_of' => $current_term->term_id,
+    'parent' => $current_term->term_id,
     'hide_empty' => false
 ); ?>
 <?php $child_terms = get_terms('product-types',$child_term_args ); ?>

@@ -11,14 +11,6 @@ function fp_grid_metaboxes() {
     // Start with an underscore to hide fields from custom fields list
     $prefix = '_fp_grid_';
 
-
-    $options[0]='Please select...';
-    if( class_exists( RGFormsModel ) ) {
-        foreach( RGFormsModel::get_forms(null, 'title') AS $form):
-            $options[$form->id] = $form->title;
-        endforeach;
-    }
-
     /**
      * Initiate the metabox
      */

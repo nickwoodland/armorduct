@@ -195,34 +195,6 @@ function products_form_metaboxes() {
          'repeatable'      => true,
     ) );
 
-    //// RELATED PRODUCTS REPEATABLE
-
-    $cmb = new_cmb2_box( array(
-        'id'            => 'related_meta',
-        'title'         => __( 'Related Products', 'cmb2' ),
-        'object_types'  => array( 'products', ), // Post type
-        'context'       => 'normal',
-        'priority'      => 'high',
-        'show_names'    => true, // Show field names on the left
-        // 'cmb_styles' => false, // false to disable the CMB stylesheet
-        // 'closed'     => true, // Keep the metabox closed by default
-    ) );
-
-    // Regular text field
-    $cmb->add_field( array(
-        'name'       => __( 'Select Related Products', 'cmb2' ),
-        //'desc'       => __( 'field description (optional)', 'cmb2' ),
-        'id'         => $prefix . 'select_r_products',
-        'type'       => 'select',
-        'options'    => $related_products,
-        //'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
-        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-        // 'on_front'        => false, // Optionally designate a field to wp-admin only
-         'repeatable'      => true,
-    ) );
-
-
 
     //// TECH SPEC GROUP
 
@@ -287,6 +259,33 @@ function products_form_metaboxes() {
             //'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()
         ),
         // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+    ) );
+
+    //// RELATED PRODUCTS REPEATABLE
+
+    $cmb = new_cmb2_box( array(
+        'id'            => 'related_meta',
+        'title'         => __( 'Related Products', 'cmb2' ),
+        'object_types'  => array( 'products', ), // Post type
+        'context'       => 'normal',
+        'priority'      => 'high',
+        'show_names'    => true, // Show field names on the left
+        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+        // 'closed'     => true, // Keep the metabox closed by default
+    ) );
+
+    // Regular text field
+    $cmb->add_field( array(
+        'name'       => __( 'Select Related Products', 'cmb2' ),
+        //'desc'       => __( 'field description (optional)', 'cmb2' ),
+        'id'         => $prefix . 'select_r_products',
+        'type'       => 'select',
+        'options'    => $related_products,
+        //'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
+        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+        // 'on_front'        => false, // Optionally designate a field to wp-admin only
+         'repeatable'      => true,
     ) );
 
 

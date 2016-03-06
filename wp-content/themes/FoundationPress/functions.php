@@ -24,6 +24,9 @@ require_once( 'library/foundation.php' );
 /** Register all navigation menus */
 require_once( 'library/navigation.php' );
 
+/** Register all navigation menus */
+require_once( 'library/query-controller.php' );
+
 /** Add menu walkers for top-bar and off-canvas */
 require_once( 'library/menu-walkers.php' );
 
@@ -41,6 +44,9 @@ require_once( 'library/theme-support.php' );
 
 /** Add Nav Options to Customer */
 require_once( 'library/custom-nav.php' );
+
+/** content locking for partners page */
+require_once( 'library/login-handling.php' );
 
 /** Change WP's sticky post class */
 require_once( 'library/sticky-posts.php' );
@@ -70,6 +76,9 @@ require_once( 'library/cmbs-product-type.php' );
 
 /** front page CMB */
 require_once( 'library/cmbs-fp.php' );
+
+/** partners page CMB */
+require_once( 'library/cmbs-partners.php' );
 
 /** finishes lookup array */
 require_once( 'library/finishes-lookup.php' );

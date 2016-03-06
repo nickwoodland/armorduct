@@ -31,9 +31,10 @@
 
 .product__nav{
     a{
-        font-size: rem-calc(20px);
+        font-size: rem-calc(18px);
         text-decoration: underline;
         color: $body-font-color;
+        font-family:$secondary-font-family;
     }
 }
 
@@ -67,6 +68,11 @@
         background-color: $body-font-color;
         color: $white;
         padding-left:rem-calc($rem-base);
+    }
+
+    .tech-spec__content{
+        font-family: $secondary-font-family;
+        font-size:rem-calc(14px);
     }
 }
 

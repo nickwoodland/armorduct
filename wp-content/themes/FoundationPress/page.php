@@ -3,9 +3,6 @@
 Template Name: Full Width
 */
 get_header(); ?>
-
-<?php get_template_part( 'parts/featured-image' ); ?>
-
 <div id="page-full-width" role="main">
 
 <?php do_action( 'foundationpress_before_content' ); ?>
@@ -17,6 +14,7 @@ get_header(); ?>
                   <h1 class="entry-title"><?php the_title(); ?></h1>
               </header>
               <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
+              <?php get_template_part( 'parts/featured-image' ); ?>
               <div class="entry-content">
                   <?php the_content(); ?>
               </div>
@@ -32,6 +30,13 @@ get_header(); ?>
         <div class="columns large-3 show-for-xlarge fp-flag__wrapper" ddata-equalizer-watch>
             <div class="fp-flag">
             </div>
+
+            <?php $sidebar_img_1 = of_get_option('sidebar_img_1'); ?>
+            <?php $sidebar_img_2 = of_get_option('sidebar_img_2'); ?>
+            <?php $sidebar_img_3 = of_get_option('sidebar_img_3'); ?>
+
+            <?php include(locate_template('parts/sidebar-slider.php')); ?>
+
         </div>
     </div>
 <?php endwhile;?>

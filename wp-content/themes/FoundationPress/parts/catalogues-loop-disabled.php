@@ -3,8 +3,8 @@
 <?php $post_count = count($wp_query->posts); ?>
 <?php $i = 0; ?>
 
-<div class="catalogues-disabled__wrapper">
-    <div class="catalogues-disabled__overlay">
+<div class="disabled__wrapper">
+    <div class="disabled__overlay">
         <strong>Please complete the form to the right for access to our catalogues, or to order via post.</strong>
     </div>
     <div class="row row--flush">

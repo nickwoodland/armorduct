@@ -16,6 +16,7 @@ get_header(); ?>
 <?php $gallery_meta = get_post_meta($post->ID, $prefix.'gallery_images', true); ?>
 <?php $table_meta = get_post_meta($post->ID, $prefix.'table_dropdown', true); ?>
 <?php $accessories_meta = get_post_meta($post->ID, $prefix.'select_accessory', true); ?>
+<?php $related_meta = get_post_meta($post->ID, $prefix.'select_r_products', true); ?>
 <?php $tech_spec_meta = get_post_meta($post->ID, 'tech_spec_group', true); ?>
 
 <div id="page-full-width" class="single-product" role="main">
@@ -92,6 +93,13 @@ get_header(); ?>
 				<div id="product-description" class="product-tech-spec__wrapper row landmark--large">
 					<h3>product information</h3>
 					<?php include(locate_template('parts/product-tech-spec-loop.php')); ?>
+				</div>
+			<?php endif; ?>
+
+			<?php if($related_meta != false): ?>
+				<h3>you may also require</h3>
+				<div id="product-accessories" class="product-accessories__wrapper row row--flush landmark--large">
+					<?php include(locate_template('parts/product-related-loop.php')); ?>
 				</div>
 			<?php endif; ?>
 

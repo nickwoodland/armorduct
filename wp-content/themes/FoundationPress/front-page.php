@@ -8,8 +8,8 @@ get_header(); ?>
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
-    <div class="row collapse" ddata-equalizer data-equalize-on="large">
-        <div class="columns xlarge-9 large-12" id="post-<?php the_ID(); ?>" ddata-equalizer-watch>
+    <div class="row collapse">
+        <div class="columns xlarge-9 large-12" id="post-<?php the_ID(); ?>">
             <?php $grid_meta = get_post_meta($post->ID, 'grid_block_group', true); ?>
 
             <?php if(!empty($grid_meta)): ?>
@@ -41,26 +41,10 @@ get_header(); ?>
                 </div>
             <?php endif; ?>
         </div>
-        <div class="columns large-3 show-for-xlarge fp-flag__wrapper" ddata-equalizer-watch>
+        <div class="columns large-3 show-for-xlarge fp-flag__wrapper">
             <div class="fp-flag">
             </div>
-            <?php $sidebar_img_1 = of_get_option('sidebar_img_1'); ?>
-            <?php $sidebar_img_2 = of_get_option('sidebar_img_2'); ?>
-            <?php $sidebar_img_3 = of_get_option('sidebar_img_3'); ?>
-
-            <?php if($sidebar_img_1 || $sidebar_img_2 || $sidebar_img_3): ?>
-                <div id="sidebar-carousel" class="sidebar-slider">
-                    <?php if($sidebar_img_1): ?>
-                        <div class=""><img src="<?php echo $sidebar_img_1; ?>" /></div>
-                    <?php endif; ?>
-                    <?php if($sidebar_img_2): ?>
-                        <div class=""><img src="<?php echo $sidebar_img_2; ?>" /></div>
-                    <?php endif; ?>
-                    <?php if($sidebar_img_3): ?>
-                        <div class=""><img src="<?php echo $sidebar_img_3; ?>" /></div>
-                    <?php endif; ?>
-                </div>
-            <?php endif; ?>
+            <?php include(locate_template('parts/sidebar-slider.php')); ?>
         </div>
 
 <?php endwhile;?>
