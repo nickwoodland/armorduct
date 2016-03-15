@@ -26,6 +26,9 @@ get_header(); ?>
     <?php $product_type_args['exclude'] = $accessories_term->term_id; ?>
 <?php endif; ?>
 
+<?php $painting_finishing = false; ?>
+<?php $painting_finishing = get_page_by_path('painting-finishing'); ?>
+
 <?php $product_type_terms = get_terms('product-types',$product_type_args ); ?>
 <div id="page-full-width" role="main">
 
@@ -34,6 +37,23 @@ get_header(); ?>
             <div class="row collapse">
 
                 <?php include(locate_template('parts/product-type-term-loop.php')); ?>
+
+                <?php if($painting_finishing): ?>
+                    <div class="columns small-6 medium-4 large-3 end">
+
+                        <?php $term_image_id = get_post_thumbnail_id($painting_finishing->ID); ?>
+                        <?php $grid_interchange_string = grid_interchange_string($term_image_id); ?>
+
+                        <article class="grid-block" data-interchange="<?php echo $grid_interchange_string; ?>">
+                            <div class="grid-block__inner">
+                                <a class="grid-block__link" href="<?php echo get_permalink($painting_finishing->ID); ?>">
+                                    <h3 class="grid-block__title"><?php echo get_the_title($painting_finishing->ID); ?></h3>
+                                </a>
+                            </div>
+                        </article>
+
+                    </div>
+                <?php endif; ?>
 
             </div>
 

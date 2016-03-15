@@ -4,7 +4,7 @@
 <?php foreach($product_type_terms as $grid_term): ?>
 
     <?php $i ++; ?>
-    <div class="columns small-6 medium-4 large-3 <?php echo($i == $product_term_count ? 'end' : ''); ?>">
+    <div class="columns small-6 medium-4 large-3 <?php echo($i == $product_term_count && $painting_finishing != true ? 'end' : ''); ?>">
 
         <?php $term_image_id = get_term_meta( $grid_term->term_id, '_product_type_image_id', 1 ); ?>
         <?php $grid_interchange_string = grid_interchange_string($term_image_id); ?>

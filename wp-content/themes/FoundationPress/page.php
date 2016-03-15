@@ -14,7 +14,7 @@ get_header(); ?>
                   <h1 class="entry-title"><?php the_title(); ?></h1>
               </header>
               <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
-              <?php get_template_part( 'parts/featured-image' ); ?>
+              <?php // get_template_part( 'parts/featured-image' ); ?>
               <div class="entry-content">
                   <?php the_content(); ?>
               </div>

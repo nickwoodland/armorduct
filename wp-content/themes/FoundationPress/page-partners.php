@@ -30,7 +30,7 @@ get_header(); ?>
                                         <div class="grid-block__inner">
 
                                             <a class="grid-block__link" href="<?php echo get_permalink($block_link); ?>">
-                                                <h3 class="grid-block__title grid-block__title--hidden"><?php echo $block_title; ?></h3>
+                                                <h3 class="grid-block__title"><?php echo $block_title; ?></h3>
                                             </a>
 
                                         </div>
