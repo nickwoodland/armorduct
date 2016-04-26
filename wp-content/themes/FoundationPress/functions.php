@@ -86,6 +86,23 @@ require_once( 'library/finishes-lookup.php' );
 /** finishes lookup array */
 require_once( 'library/gforms-catalogues.php' );
 
+function dc_custom_search_query( $query ) {
+    if ( !is_admin() && $query->is_search ) {
+        $query->set('meta_query', array(
+            array(
+                'key' => '_ad_products_ref_code',
+                'value' => $query->query_vars['s'],
+                'compare' => 'LIKE'
+            )
+        ));
+        echo"<pre>";
+        print_r($query);
+        echo"</pre>";
+        // $query->set('post_type', '__your_post_type__'); // optional
+        };
+    }
+add_filter( 'pre_get_posts', 'dc_custom_search_query');
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
 

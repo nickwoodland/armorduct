@@ -121,6 +121,7 @@
     border-radius:rem-calc($rem-base);
     box-shadow: 4px 8px 8px lighten($black, 10%);
     margin:0px;
+    z-index:99;
 }
 
 .flex-menu{

@@ -82,6 +82,13 @@ get_header(); ?>
 				</div>
 			</div>
 
+			<?php if($related_meta != false): ?>
+				<h3>you will also require</h3>
+				<div id="product-accessories" class="product-accessories__wrapper row row--flush landmark--large">
+					<?php include(locate_template('parts/product-related-loop.php')); ?>
+				</div>
+			<?php endif; ?>
+
 			<?php if($accessories_meta != false): ?>
 				<h3><?php the_title(); ?> accessories</h3>
 				<div id="product-accessories" class="product-accessories__wrapper row row--flush landmark--large">
@@ -93,13 +100,6 @@ get_header(); ?>
 				<div id="product-description" class="product-tech-spec__wrapper row landmark--large">
 					<h3>product information</h3>
 					<?php include(locate_template('parts/product-tech-spec-loop.php')); ?>
-				</div>
-			<?php endif; ?>
-
-			<?php if($related_meta != false): ?>
-				<h3>you may also require</h3>
-				<div id="product-accessories" class="product-accessories__wrapper row row--flush landmark--large">
-					<?php include(locate_template('parts/product-related-loop.php')); ?>
 				</div>
 			<?php endif; ?>
 

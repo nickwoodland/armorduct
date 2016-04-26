@@ -32,5 +32,6 @@
       "wpackagist-plugin/tablepress": "1.7",
       "wpackagist-plugin/animated-gif-resize": "1.0",
       "wpackagist-plugin/taxonomy-terms-order": "1.4.7",
+      "wpackagist-plugin/relevanssi": "3.5.3"
   }
 }
