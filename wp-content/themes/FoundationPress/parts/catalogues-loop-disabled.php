@@ -5,7 +5,7 @@
 
 <div class="disabled__wrapper">
     <div class="disabled__overlay">
-        <strong>Please complete the form to the right for access to our catalogues, or to order via post.</strong>
+        <strong>please complete the form to the right for access to our catalogues, or to order via post.</strong>
     </div>
     <div class="row row--flush">
         <?php while ( have_posts() ) : the_post(); ?>

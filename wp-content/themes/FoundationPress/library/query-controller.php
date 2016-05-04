@@ -37,7 +37,9 @@ function site_query_controller($query) {
                 $query->set('orderby','title');
                 $query->set('order','DESC');
             endif;*/
-
+            if(is_home()) :
+                $query->set('posts_per_page', 16);
+            endif;
 
             // Conditionalise for a CPT Tax/term archive
 
