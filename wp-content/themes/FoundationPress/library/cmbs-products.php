@@ -136,6 +136,10 @@ function products_form_metaboxes() {
             'epc' => 'Epoxy Powder Coat',
             'ss' => 'Stainless Steel',
             'wp' => 'Waterproof',
+            'br' => 'Brass',
+            'ch' => 'Chrome',
+            'ali' => 'Aluminium',
+            'mg' => 'Magnelis'
         ),
     ) );
 
