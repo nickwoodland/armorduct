@@ -90,7 +90,7 @@ get_header(); ?>
 			<?php endif; ?>
 
 			<?php if($accessories_meta != false): ?>
-				<h3><?php the_title(); ?> accessories</h3>
+				<h3 class="product-accessories__heading"><?php the_title(); ?> accessories</h3>
 				<div id="product-accessories" class="product-accessories__wrapper row row--flush landmark--large">
 					<?php include(locate_template('parts/product-accessories-loop.php')); ?>
 				</div>

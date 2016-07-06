@@ -17,7 +17,7 @@
 
         <?php $i++; ?>
 
-        <div class="columns medium-3 small-6 <?php echo($i == $r_products_count ? 'end' : ''); ?>">
+        <div class="columns medium-2 small-6 <?php echo($i == $r_products_count ? 'end' : ''); ?>">
                 <div class="accessory-listing">
                 <a href="<?php the_permalink(); ?>">
                     <img data-interchange="<?php echo $r_product_interchange_string; ?>" />
