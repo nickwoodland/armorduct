@@ -41,7 +41,7 @@ get_header(); ?>
 
 							<?php foreach($finishes_meta as $finish): ?>
 								<div class="product-finish">
-									<? $finish_details_array = finishes_lookup($finish); ?>
+									<?php $finish_details_array = finishes_lookup($finish); ?>
 									<img src="<?php echo get_stylesheet_directory_uri() . $finish_details_array['img']; ?>" alt="icon for <?php echo $finish_details_array['title']; ?>"/>
 									<?php /* <h4><?php echo $finish_details_array['title']; ?></h4> */ ?>
 								</div>

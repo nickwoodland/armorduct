@@ -14,6 +14,10 @@ if ( ! function_exists( 'finishes_lookup' ) ) :
             'epc' =>  array('title' => 'Epoxy Powder Coat', 'img' => '/assets/images/finishes/pc.png'),
             'ss' =>  array('title' => 'Stainless Steel', 'img' => '/assets/images/finishes/ss.png'),
             'wp' =>  array('title' => 'Waterproof', 'img' => '/assets/images/finishes/wp.png'),
+            'br' => array('title' => 'Brass', 'img' => '/assets/images/finishes/br.png'),
+            'ch' => array('title' => 'Chrome', 'img' => '/assets/images/finishes/ch.png'),
+            'ali' => array('title' => 'Aluminium', 'img' => '/assets/images/finishes/ali.png'),
+            'mg' => array('title' => 'Magnelis', 'img' => '/assets/images/finishes/mg.png')
         );
 
         $finish_return = $finishes_array[$finish];
