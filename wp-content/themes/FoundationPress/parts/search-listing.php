@@ -1,4 +1,4 @@
-<div id="post-<?php the_ID(); ?>">
+<div class="search-listing" id="post-<?php the_ID(); ?>">
 	<header>
 		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 	</header>

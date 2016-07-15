@@ -83,8 +83,11 @@ require_once( 'library/cmbs-partners.php' );
 /** finishes lookup array */
 require_once( 'library/finishes-lookup.php' );
 
-/** finishes lookup array */
+/** gform hooks for catalogue functionality */
 require_once( 'library/gforms-catalogues.php' );
+
+/** relevanssi hooks */
+require_once( 'library/search-hooks.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );

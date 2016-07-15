@@ -49,6 +49,10 @@ function site_query_controller($query) {
                 $query->set('order','ASC');
             endif;
 
+            if(is_search() ):
+                $query->set('posts_per_page', 24);
+            endif;
+
 
            // endif; //service archive check
 

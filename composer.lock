@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5db3c3a221fdba400f8c43ca2fabb197",
-    "content-hash": "82ed37f2b6d6b1ae1d2c5f423e615d69",
+    "hash": "ad2d95b838d4581c2f10442a5d0b3c09",
+    "content-hash": "ce2c6ae144ea2a211066bdff2c135881",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "dev-master",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "21a8c06dd5fe0a22b776797cc552e51d17d7e7dd"
+                "reference": "a3595c5272a6f247228abb20076ed27321e4aae9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/21a8c06dd5fe0a22b776797cc552e51d17d7e7dd",
-                "reference": "21a8c06dd5fe0a22b776797cc552e51d17d7e7dd",
+                "url": "https://api.github.com/repos/composer/installers/zipball/a3595c5272a6f247228abb20076ed27321e4aae9",
+                "reference": "a3595c5272a6f247228abb20076ed27321e4aae9",
                 "shasum": ""
             },
             "require": {
@@ -81,6 +81,7 @@
                 "dokuwiki",
                 "drupal",
                 "elgg",
+                "expressionengine",
                 "fuelphp",
                 "grav",
                 "installer",
@@ -106,7 +107,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-04-24 13:17:36"
+            "time": "2016-07-05 06:18:20"
         },
         {
             "name": "wpackagist-plugin/animated-gif-resize",
@@ -130,15 +131,15 @@
         },
         {
             "name": "wpackagist-plugin/better-wp-security",
-            "version": "5.2.1",
+            "version": "5.6.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/better-wp-security/",
-                "reference": "tags/5.2.1"
+                "reference": "tags/5.6.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/better-wp-security.5.2.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/better-wp-security.5.6.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -150,10 +151,10 @@
         },
         {
             "name": "wpackagist-plugin/cmb2",
-            "version": "2.1.2",
+            "version": "2.2.2.1",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/cmb2/",
+                "url": "https://plugins.svn.wordpress.org/cmb2/",
                 "reference": "trunk"
             },
             "dist": {
@@ -190,15 +191,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-comments",
-            "version": "1.4.2",
+            "version": "1.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/disable-comments/",
-                "reference": "tags/1.4.2"
+                "reference": "tags/1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.4.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -250,15 +251,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.4.4",
+            "version": "2.4.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.4.4"
+                "reference": "tags/2.4.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.2.4.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.4.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -330,15 +331,15 @@
         },
         {
             "name": "wpackagist-plugin/taxonomy-terms-order",
-            "version": "1.4.7",
+            "version": "1.4.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/taxonomy-terms-order/",
-                "reference": "tags/1.4.7"
+                "reference": "tags/1.4.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/taxonomy-terms-order.1.4.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/taxonomy-terms-order.1.4.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -350,15 +351,15 @@
         },
         {
             "name": "wpackagist-plugin/user-role-editor",
-            "version": "4.25.1",
+            "version": "4.26",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/user-role-editor/",
-                "reference": "tags/4.25.1"
+                "reference": "tags/4.26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-role-editor.4.25.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/user-role-editor.4.26.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -370,15 +371,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.0.7",
+            "version": "3.3.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.0.7"
+                "reference": "tags/3.3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.0.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.3.4.zip",
                 "reference": null,
                 "shasum": null
             },
