@@ -36,7 +36,7 @@ get_header(); ?>
 						<div class="product-finishes__wrapper">
 
 							<span class="product-finishes__title">
-								For special finishes please add -
+								Available in -
 							</span>
 
 							<?php foreach($finishes_meta as $finish): ?>
