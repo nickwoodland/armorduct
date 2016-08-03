@@ -11,6 +11,11 @@ get_header(); ?>
 
 <?php $prefix = '_ad_products_'; ?>
 
+<?php $parent_product_link = false; ?>
+<?php if(isset($_GET['product'])): ?>
+    <?php $parent_product_link = get_the_permalink($_GET['product']); ?>
+<?php endif; ?>
+
 <?php $finishes_meta = get_post_meta($post->ID, $prefix.'finishes', true); ?>
 <?php $ref_meta = get_post_meta($post->ID, $prefix.'ref_code', true); ?>
 <?php $gallery_meta = get_post_meta($post->ID, $prefix.'gallery_images', true); ?>
@@ -68,7 +73,11 @@ get_header(); ?>
 					<nav class="product__nav">
 						<span>
 							<a href="#product-description">description</a>
-							<a href="#product-accessories">accessories</a>
+                            <?php if($parent_product_link): ?>
+                                <a href="<?php echo $parent_product_link; ?>">return to product</a>
+                            <?php else: ?>
+                                <a href="#product-accessories">accessories</a>
+                            <?php endif; ?>
 						</span>
 						<span>
 							<a href="#product-quote">quote request</a>
