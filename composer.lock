@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ad2d95b838d4581c2f10442a5d0b3c09",
-    "content-hash": "ce2c6ae144ea2a211066bdff2c135881",
+    "hash": "17f3d8a7f3ce6ce704b4e5532985201f",
+    "content-hash": "e1226f841186378439c174242160a433",
     "packages": [
         {
             "name": "composer/installers",
@@ -131,15 +131,15 @@
         },
         {
             "name": "wpackagist-plugin/better-wp-security",
-            "version": "5.6.0",
+            "version": "5.6.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/better-wp-security/",
-                "reference": "tags/5.6.0"
+                "reference": "tags/5.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/better-wp-security.5.6.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/better-wp-security.5.6.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -191,15 +191,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-comments",
-            "version": "1.5",
+            "version": "1.5.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/disable-comments/",
-                "reference": "tags/1.5"
+                "reference": "tags/1.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.5.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -351,15 +351,15 @@
         },
         {
             "name": "wpackagist-plugin/user-role-editor",
-            "version": "4.26",
+            "version": "4.27",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/user-role-editor/",
-                "reference": "tags/4.26"
+                "reference": "tags/4.27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-role-editor.4.26.zip",
+                "url": "https://downloads.wordpress.org/plugin/user-role-editor.4.27.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -371,15 +371,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.3.4",
+            "version": "3.4.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.3.4"
+                "reference": "tags/3.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.3.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.4.2.zip",
                 "reference": null,
                 "shasum": null
             },
