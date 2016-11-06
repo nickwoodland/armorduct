@@ -46,6 +46,12 @@
                     }
                 }
 
+                &.row-highlight-white{
+                    td{
+                    background-color: $white;
+                    }
+                }
+
 
                 &.row-highlight-bold{
                     td{

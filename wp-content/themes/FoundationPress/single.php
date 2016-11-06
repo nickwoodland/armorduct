@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<div id="single-post" role="main">
+<div id="page-full-width" role="main">
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
@@ -21,7 +21,7 @@ get_header(); ?>
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
 		<div class="entry-content">
 
- 		<?php// get_template_part( 'parts/featured-image' ); ?>
+ 		<?php // get_template_part( 'parts/featured-image' ); ?>
 
 		<?php the_content(); ?>
 		</div>
@@ -36,6 +36,6 @@ get_header(); ?>
 <?php endwhile;?>
 
 <?php do_action( 'foundationpress_after_content' ); ?>
-<?php get_sidebar(); ?>
+<?php // get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>

@@ -21,3 +21,12 @@
 .product-gallery__single{
     text-align:center;
 }
+
+.sync-carousel--nav__wrapper{
+    .slick-prev, .slick-next, .slick-dots{
+        visibility: hidden;
+        height:0px;
+        width:0px;
+        overflow:hidden;
+    }
+}

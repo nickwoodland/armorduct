@@ -13,8 +13,14 @@
 
         <?php $prefix = '_ad_products_'; ?>
         <?php $accessory_gallery_meta = get_post_meta($post->ID, $prefix.'gallery_images', true); ?>
-        <?php $accessory_thumb = array_keys(array_slice($accessory_gallery_meta, 0, 1, true)); ?>
-        <?php $accessory_interchange_string = grid_interchange_string($accessory_thumb[0]); ?>
+
+        <?php $accessory_interchange_string = ''; ?>
+
+        <?php if($accessory_gallery_meta): ?>
+            <?php $accessory_thumb = array_keys(array_slice($accessory_gallery_meta, 0, 1, true)); ?>
+            <?php $accessory_interchange_string = grid_interchange_string($accessory_thumb[0]); ?>
+        <?php endif; ?>
+
         <?php $accessory_link = add_query_arg( 'product', $product_id, get_the_permalink($post->ID)); ?>
 
 
